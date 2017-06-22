@@ -7,6 +7,7 @@
  */
 
 
+
 $imgNum = 'bind';
 $sid = $_GET['sid'];
 $imgNum = $_GET['imgNum'];
@@ -21,6 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $bind = qb()->table('profile_list')->where(array('nickname' => $result['nickname']))->update(array($sid => $imgNum));
 
 
+} else {
+    echo 'bad';
+
 }
 
 ?>
+
+
