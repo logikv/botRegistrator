@@ -6,6 +6,7 @@
  * Time: 17:55
  */
 
+require_once '../sql-query/function.qb.php';
 require_once "func.inc.php";
 
 
@@ -15,7 +16,7 @@ $imgAlt = $_GET['imgAlt'];
 $profileNickname = $_GET['profileNickname'];
 
 
-$query = "UPDATE botresource  SET count = $imgName  WHERE nickname LIKE '$profileNickname' LIMIT 1;";
+//$query = "UPDATE botresource  SET count = $imgName  WHERE nickname LIKE '$profileNickname' LIMIT 1;";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -27,32 +28,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $copyToPath = "success";
 
 
-            if ($result = $mysqli->query("$query", MYSQLI_USE_RESULT)) {
+            if ($result = qb()->table('botresource')->where(array('nickname' => $profileNickname))->update(array('count' => $imgName))) {
 
-                //$result->close();
                 if ($fwrite = fwrite_stream($profileNickname, $imgName, $imgAlt)) {
                     $imgAltSave = "success";
                     echo 'All OK';
-
+                } else {
+                    echo "Возможно, в тексте параметра идет кавычка";
                 }
 
-
             } else {
-
-                echo "Возможно, в тексте параметра идет кавычка";
-                $result->close();
-
+                echo 'не получилось сохранить файл';
             }
+
         } else {
-            echo 'не получилось сохранить файл';
-
+            echo '$profileNickname не задан. $profileNickname является ключевым полем для далнейшего обращения';
         }
-
-
-    } else {
-        echo '$profileNickname не задан. $profileNickname является ключевым полем для далнейшего обращения';
     }
 }
-
 
 ?>
