@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     $imgAltSave = "success";
                     echo 'All OK';
                 } else {
-                    echo "Возможно, в тексте параметра идет  кавычка";
+                    echo "Возможно, в тексте параметра идет кавычка";
                 }
 
             } else {
