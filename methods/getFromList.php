@@ -25,12 +25,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 }
 
-$result = qb()->table('table_name')->where(array(
-    'username' => 'testuser',
-    'email' => 'email@site.com',
-    'role' => array(1, 2, 3),
-    array('status', '<>', 0)
-))->all();
-
 
 ?>
