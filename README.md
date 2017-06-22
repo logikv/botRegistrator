@@ -1,0 +1,2 @@
+# botRegistrator
+botRegistrator
