@@ -6,7 +6,7 @@
  * Time: 17:55
  */
 
-require_once "Mysql.php";
+require_once "func.inc.php";
 
 
 $imgLink = $_GET['imgLink'];

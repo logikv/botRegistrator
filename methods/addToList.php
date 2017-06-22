@@ -7,7 +7,7 @@
  */
 
 require_once '../sql-query/function.qb.php';
-require_once "Mysql.php";
+require_once "func.inc.php";
 
 
 $profileNickname = $_GET['profileNickname'];
