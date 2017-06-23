@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $result = qb()->table('botresource')->where(array(
         'check' => '1'
     ))->one();
-    echo $result['nickname'] . '' . $result['lastname'] . '' . $result['firstname'];
+    echo $result['nickname'] . ' ' . $result['lastname'] . ' ' . $result['firstname'];
     $bind = qb()->table('profile_list')->where(array('nickname' => $result['nickname']))->update(array($sid => $imgNum));
 
 
