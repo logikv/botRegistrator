@@ -6,6 +6,7 @@
  * Time: 18:10
  */
 
+require_once '../sql-query/function.qb.php';
 
 
 $imgNum = 'bind';
