@@ -8,6 +8,7 @@
 
 require_once '../sql-query/function.qb.php';
 
+echo 1;
 
 $imgNum = 'bind';
 $sid = $_GET['sid'];
