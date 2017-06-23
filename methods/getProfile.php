@@ -12,6 +12,9 @@ require_once '../sql-query/function.qb.php';
 $sid = $_GET['sid'];
 $imgNum = $_GET['imgNum'];
 
+echo $sid.' '.$imgNum;
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 
